@@ -31,7 +31,7 @@ public class PlayerMovement : MonoBehaviour {
     void Move(float h, float v)
     {
         movement.Set(h, 0f, v);
-        movement = movement.normalized * speed * Time.deltaTime * 6.0f;
+        movement = movement.normalized * speed * Time.deltaTime * 8.0f;
         playerRb.MovePosition(transform.position + movement);
         var x = Input.GetAxis("Horizontal") * Time.deltaTime * 150.0f;
         var z = Input.GetAxis("Vertical") * Time.deltaTime * 3.0f;

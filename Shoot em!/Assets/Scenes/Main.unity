@@ -357,6 +357,23 @@ MonoBehaviour:
   Bullet_Emitter: {fileID: 1303167669}
   Bullet: {fileID: 1508194322174436, guid: eb85a49fc2c076240a32111722ec322e, type: 2}
   Bullet_Forward_Force: 1000
+--- !u!1 &207972499 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1503109148419820, guid: ef83a497352ef5e4187d44dc97bc359a,
+    type: 2}
+  m_PrefabInternal: {fileID: 515932459}
+--- !u!135 &207972503
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 207972499}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &229035713
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +595,11 @@ Prefab:
     - target: {fileID: 4276712590325084, guid: ef83a497352ef5e4187d44dc97bc359a, type: 2}
       propertyPath: m_RootOrder
       value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 95886781023303294, guid: ef83a497352ef5e4187d44dc97bc359a,
+        type: 2}
+      propertyPath: m_Controller
+      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ef83a497352ef5e4187d44dc97bc359a, type: 2}

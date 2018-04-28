@@ -10,10 +10,10 @@ public class PlayerShooting : MonoBehaviour
     Ray shootRay;                                   // A ray from the gun end forwards.
     RaycastHit shootHit;                            // A raycast hit to get information about what was hit.
     int shootableMask;                              // A layer mask so the raycast only hits things on the shootable layer.
-    ParticleSystem gunParticles;                    // Reference to the particle system.
-    LineRenderer gunLine;                           // Reference to the line renderer.
+    //ParticleSystem gunParticles;                    // Reference to the particle system.
+    //LineRenderer gunLine;                           // Reference to the line renderer.
     AudioSource gunAudio;                           // Reference to the audio source.
-    //Light gunLight;                                 // Reference to the light component.
+    Light gunLight;                                 // Reference to the light component.
     float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
 
     void Awake()
@@ -22,10 +22,10 @@ public class PlayerShooting : MonoBehaviour
         shootableMask = LayerMask.GetMask("Shootable");
 
         // Set up the references.
-        gunParticles = GetComponent<ParticleSystem>();
-        gunLine = GetComponent<LineRenderer>();
+        //gunParticles = GetComponent<ParticleSystem>();
+        //gunLine = GetComponent<LineRenderer>();
         gunAudio = GetComponent<AudioSource>();
-        //gunLight = GetComponent<>();
+        gunLight = GetComponent<Light>();
     }
 
     void Update()
@@ -51,8 +51,8 @@ public class PlayerShooting : MonoBehaviour
     public void DisableEffects()
     {
         // Disable the line renderer and the light.
-        gunLine.enabled = false;
-        //gunLight.enabled = false;
+        //gunLine.enabled = false;
+        gunLight.enabled = false;
     }
 
     void Shoot()
@@ -64,15 +64,15 @@ public class PlayerShooting : MonoBehaviour
         gunAudio.Play();
 
         // Enable the light.
-        //gunLight.enabled = true;
+        gunLight.enabled = true;
 
         // Stop the particles from playing if they were, then start the particles.
-        gunParticles.Stop();
-        gunParticles.Play();
+        //gunParticles.Stop();
+        //gunParticles.Play();
 
         // Enable the line renderer and set it's first position to be the end of the gun.
-        gunLine.enabled = true;
-        gunLine.SetPosition(0, transform.position);
+        //gunLine.enabled = true;
+        //gunLine.SetPosition(0, transform.position);
 
         // Set the shootRay so that it starts at the end of the gun and points forward from the barrel.
         shootRay.origin = transform.position;
@@ -92,13 +92,13 @@ public class PlayerShooting : MonoBehaviour
             }
 
             // Set the second position of the line renderer to the point the raycast hit.
-            gunLine.SetPosition(1, shootHit.point);
+            //gunLine.SetPosition(1, shootHit.point);
         }
         // If the raycast didn't hit anything on the shootable layer...
         else
         {
             // ... set the second position of the line renderer to the fullest extent of the gun's range.
-            gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
+            //gunLine.SetPosition(1, shootRay.origin + shootRay.direction * range);
         }
     }
 }

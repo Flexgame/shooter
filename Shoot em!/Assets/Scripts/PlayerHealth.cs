@@ -86,7 +86,7 @@ public class PlayerHealth : MonoBehaviour
         playerShooting.DisableEffects();
 
         // Tell the animator that the player is dead.
-        //anim.SetTrigger("Die");
+        anim.SetTrigger("Die");
         transform.Translate(-Vector3.up * 15 * Time.deltaTime);
         // Set the audiosource to play the death clip and play it (this will stop the hurt sound from playing).
         playerAudio.clip = deathClip;
@@ -95,6 +95,5 @@ public class PlayerHealth : MonoBehaviour
         // Turn off the movement and shooting scripts.
         playerMovement.enabled = false;
         playerShooting.enabled = false;
-        Destroy(gameObject,2f);
     }
 }

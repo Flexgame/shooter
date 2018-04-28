@@ -13,7 +13,7 @@ public class ScoreManager : MonoBehaviour
     void Awake()
     {
         // Set up the reference.
-        text = GetComponent();
+        text = GetComponent<Text>();
 
         // Reset the score.
         score = 0;

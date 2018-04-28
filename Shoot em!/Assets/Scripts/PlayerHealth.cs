@@ -24,10 +24,10 @@ public class PlayerHealth : MonoBehaviour
     void Awake()
     {
         // Setting up the references.
-        anim = GetComponent();
-        playerAudio = GetComponent();
-        playerMovement = GetComponent();
-        playerShooting = GetComponentInChildren();
+        anim = GetComponent<Animator>();
+        playerAudio = GetComponent<AudioSource>();
+        playerMovement = GetComponent<PlayerMovement>();
+        //playerShooting = GetComponentInChildren<PlayerShooting>();
 
         // Set the initial health of the player.
         currentHealth = startingHealth;

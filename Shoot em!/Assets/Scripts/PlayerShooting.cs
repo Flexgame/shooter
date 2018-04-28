@@ -13,7 +13,7 @@ public class PlayerShooting : MonoBehaviour
     ParticleSystem gunParticles;                    // Reference to the particle system.
     LineRenderer gunLine;                           // Reference to the line renderer.
     AudioSource gunAudio;                           // Reference to the audio source.
-    Light gunLight;                                 // Reference to the light component.
+    //Light gunLight;                                 // Reference to the light component.
     float effectsDisplayTime = 0.2f;                // The proportion of the timeBetweenBullets that the effects will display for.
 
     void Awake()
@@ -22,10 +22,10 @@ public class PlayerShooting : MonoBehaviour
         shootableMask = LayerMask.GetMask("Shootable");
 
         // Set up the references.
-        gunParticles = GetComponent();
-        gunLine = GetComponent();
-        gunAudio = GetComponent();
-        gunLight = GetComponent();
+        gunParticles = GetComponent<ParticleSystem>();
+        gunLine = GetComponent<LineRenderer>();
+        gunAudio = GetComponent<AudioSource>();
+        //gunLight = GetComponent<>();
     }
 
     void Update()
@@ -52,7 +52,7 @@ public class PlayerShooting : MonoBehaviour
     {
         // Disable the line renderer and the light.
         gunLine.enabled = false;
-        gunLight.enabled = false;
+        //gunLight.enabled = false;
     }
 
     void Shoot()
@@ -64,7 +64,7 @@ public class PlayerShooting : MonoBehaviour
         gunAudio.Play();
 
         // Enable the light.
-        gunLight.enabled = true;
+        //gunLight.enabled = true;
 
         // Stop the particles from playing if they were, then start the particles.
         gunParticles.Stop();
@@ -82,7 +82,7 @@ public class PlayerShooting : MonoBehaviour
         if (Physics.Raycast(shootRay, out shootHit, range, shootableMask))
         {
             // Try and find an EnemyHealth script on the gameobject hit.
-            EnemyHealth enemyHealth = shootHit.collider.GetComponent();
+            EnemyHealth enemyHealth = shootHit.collider.GetComponent<EnemyHealth>();
 
             // If the EnemyHealth component exist...
             if (enemyHealth != null)

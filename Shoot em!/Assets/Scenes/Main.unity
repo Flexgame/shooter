@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.4964127, b: 0.57481724, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -4999,6 +4999,7 @@ GameObject:
   - component: {fileID: 968324326}
   - component: {fileID: 968324325}
   - component: {fileID: 968324330}
+  - component: {fileID: 968324331}
   m_Layer: 5
   m_Name: HudCanvas
   m_TagString: Untagged
@@ -5110,6 +5111,23 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealth: {fileID: 54998005}
   restartDelay: 5
+--- !u!95 &968324331
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 968324324}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 97b5fb4495e5f214fb57a76255b620a7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &991191827
 GameObject:
   m_ObjectHideFlags: 0
